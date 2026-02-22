@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+           xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
+           xsi:type="TaskPaneApp">
+
+  <!-- ============================================================
+       OW PPTX QA Tool - Office Add-in Manifest
+       Replace REPLACE-WITH-YOUR-GUID with a real GUID.
+       Generate one at: https://www.guidgenerator.com/
+  ============================================================ -->
+
+  <Id>REPLACE-WITH-YOUR-GUID</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>Oliver Wyman Creative Studio</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="OW PPTX QA Tool"/>
+  <Description DefaultValue="Validate PowerPoint presentations against Oliver Wyman brand guidelines."/>
+
+  <IconUrl DefaultValue="https://REPLACE-WITH-YOUR-GITHUB-PAGES-URL/assets/icon-32.png"/>
+  <HighResolutionIconUrl DefaultValue="https://REPLACE-WITH-YOUR-GITHUB-PAGES-URL/assets/icon-64.png"/>
+  <SupportUrl DefaultValue="https://github.com/REPLACE-WITH-YOUR-ORG/ow-pptx-qa"/>
+
+  <AppDomains>
+    <AppDomain>https://REPLACE-WITH-YOUR-GITHUB-PAGES-URL</AppDomain>
+  </AppDomains>
+
+  <Hosts>
+    <Host Name="Presentation"/>
+  </Hosts>
+
+  <Requirements>
+    <Sets DefaultMinVersion="1.1">
+      <Set Name="PresentationAPI" MinVersion="1.1"/>
+    </Sets>
+  </Requirements>
+
+  <DefaultSettings>
+    <SourceLocation DefaultValue="https://REPLACE-WITH-YOUR-GITHUB-PAGES-URL/src/taskpane/taskpane.html"/>
+  </DefaultSettings>
+
+  <Permissions>ReadWriteDocument</Permissions>
+
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
+    <Hosts>
+      <Host xsi:type="Presentation">
+        <DesktopFormFactor>
+          <GetStarted>
+            <Title resid="GetStarted.Title"/>
+            <Description resid="GetStarted.Description"/>
+            <LearnMoreUrl resid="GetStarted.LearnMoreUrl"/>
+          </GetStarted>
+          <FunctionFile resid="Commands.Url"/>
+          <ExtensionPoint xsi:type="PrimaryCommandSurface">
+            <OfficeTab id="TabHome">
+              <Group id="CommandsGroup">
+                <Label resid="CommandsGroup.Label"/>
+                <Icon>
+                  <bt:Image size="16" resid="Icon.16x16"/>
+                  <bt:Image size="32" resid="Icon.32x32"/>
+                  <bt:Image size="80" resid="Icon.80x80"/>
+                </Icon>
+                <Control xsi:type="Button" id="OpenPaneButton">
+                  <Label resid="OpenPaneButton.Label"/>
+                  <Supertip>
+                    <Title resid="OpenPaneButton.Label"/>
+                    <Description resid="OpenPaneButton.Tooltip"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.16x16"/>
+                    <bt:Image size="32" resid="Icon.32x32"/>
+                    <bt:Image size="80" resid="Icon.80x80"/>
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>ButtonId1</TaskpaneId>
+                    <SourceLocation resid="Taskpane.Url"/>
+                  </Action>
+                </Control>
+              </Group>
+            </OfficeTab>
+          </ExtensionPoint>
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+
+    <Resources>
+      <bt:Images>
+        <bt:Image id="Icon.16x16" DefaultValue="https://REPLACE-WITH-YOUR-GITHUB-PAGES-URL/assets/icon-16.png"/>
+        <bt:Image id="Icon.32x32" DefaultValue="https://REPLACE-WITH-YOUR-GITHUB-PAGES-URL/assets/icon-32.png"/>
+        <bt:Image id="Icon.80x80" DefaultValue="https://REPLACE-WITH-YOUR-GITHUB-PAGES-URL/assets/icon-80.png"/>
+      </bt:Images>
+      <bt:Urls>
+        <bt:Url id="GetStarted.LearnMoreUrl" DefaultValue="https://github.com/REPLACE-WITH-YOUR-ORG/ow-pptx-qa"/>
+        <bt:Url id="Commands.Url" DefaultValue="https://REPLACE-WITH-YOUR-GITHUB-PAGES-URL/src/commands/commands.html"/>
+        <bt:Url id="Taskpane.Url" DefaultValue="https://REPLACE-WITH-YOUR-GITHUB-PAGES-URL/src/taskpane/taskpane.html"/>
+      </bt:Urls>
+      <bt:ShortStrings>
+        <bt:String id="GetStarted.Title" DefaultValue="OW PPTX QA Tool"/>
+        <bt:String id="CommandsGroup.Label" DefaultValue="OW Brand QA"/>
+        <bt:String id="OpenPaneButton.Label" DefaultValue="Run QA Check"/>
+      </bt:ShortStrings>
+      <bt:LongStrings>
+        <bt:String id="GetStarted.Description" DefaultValue="Validate your presentation against OW brand guidelines."/>
+        <bt:String id="OpenPaneButton.Tooltip" DefaultValue="Open the OW Brand QA panel to validate this presentation."/>
+      </bt:LongStrings>
+    </Resources>
+  </VersionOverrides>
+</OfficeApp>

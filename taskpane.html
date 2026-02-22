@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>OW PPTX QA Tool</title>
+
+  <!-- Office.js - must be loaded from CDN -->
+  <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
+
+  <!-- Fabric UI icons (Microsoft design system) -->
+  <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/11.0.0/css/fabric.min.css"/>
+
+  <link rel="stylesheet" href="taskpane.css"/>
+</head>
+<body>
+  <div id="app">
+
+    <!-- Header -->
+    <header class="ow-header">
+      <div class="ow-logo">
+        <span class="ow-logo-mark">OW</span>
+        <span class="ow-logo-title">Brand QA</span>
+      </div>
+      <div class="ow-version">v1.0</div>
+    </header>
+
+    <!-- Main content -->
+    <main class="ow-main">
+
+      <!-- Idle state -->
+      <section id="state-idle" class="state active">
+        <p class="ow-intro">
+          Validate this presentation against Oliver Wyman brand guidelines. 
+          Checks fonts, colours, layouts, and master slide usage.
+        </p>
+        <button id="btn-run-qa" class="ow-btn ow-btn-primary">
+          <span class="ms-Icon ms-Icon--CheckList"></span>
+          Run QA Check
+        </button>
+        <div class="ow-divider"></div>
+        <div class="ow-scope-label">Scope</div>
+        <div class="ow-scope-options">
+          <label class="ow-radio">
+            <input type="radio" name="scope" value="all" checked /> All slides
+          </label>
+          <label class="ow-radio">
+            <input type="radio" name="scope" value="current" /> Current slide only
+          </label>
+        </div>
+      </section>
+
+      <!-- Loading state -->
+      <section id="state-loading" class="state">
+        <div class="ow-spinner-wrap">
+          <div class="ow-spinner"></div>
+          <p class="ow-loading-text" id="loading-message">Analysing presentation…</p>
+        </div>
+      </section>
+
+      <!-- Results state -->
+      <section id="state-results" class="state">
+        <div class="ow-results-header">
+          <div class="ow-score-ring" id="score-ring">
+            <svg viewBox="0 0 44 44">
+              <circle class="ow-ring-bg" cx="22" cy="22" r="18"/>
+              <circle class="ow-ring-fill" id="ring-fill" cx="22" cy="22" r="18"
+                stroke-dasharray="113" stroke-dashoffset="113"/>
+            </svg>
+            <span class="ow-score-value" id="score-value">--</span>
+          </div>
+          <div class="ow-results-summary">
+            <div class="ow-summary-stat">
+              <span class="stat-value" id="stat-errors">0</span>
+              <span class="stat-label">Errors</span>
+            </div>
+            <div class="ow-summary-stat">
+              <span class="stat-value warn" id="stat-warnings">0</span>
+              <span class="stat-label">Warnings</span>
+            </div>
+            <div class="ow-summary-stat">
+              <span class="stat-value ok" id="stat-passed">0</span>
+              <span class="stat-label">Passed</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Issue list -->
+        <div class="ow-issue-list" id="issue-list">
+          <!-- Populated by JS -->
+        </div>
+
+        <div class="ow-actions">
+          <button id="btn-rerun" class="ow-btn ow-btn-secondary">
+            <span class="ms-Icon ms-Icon--Refresh"></span>
+            Re-run
+          </button>
+          <button id="btn-export" class="ow-btn ow-btn-ghost">
+            <span class="ms-Icon ms-Icon--Download"></span>
+            Export report
+          </button>
+        </div>
+      </section>
+
+      <!-- Error state -->
+      <section id="state-error" class="state">
+        <div class="ow-error-icon">⚠</div>
+        <p class="ow-error-message" id="error-message">An error occurred.</p>
+        <button id="btn-retry" class="ow-btn ow-btn-secondary">Try again</button>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="ow-footer">
+      Oliver Wyman Creative Studio
+    </footer>
+  </div>
+
+  <script src="taskpane.js"></script>
+</body>
+</html>
