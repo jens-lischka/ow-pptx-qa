@@ -94,9 +94,9 @@ async function readSlides(scope) {
         slides.load('items');
         await context.sync();
 
-        const slideItems = scope === 'current'
-          ? [slides.items[presentation.activeSlide ? presentation.activeSlide.id : 0]]
-          : slides.items;
+const slideItems = scope === 'current'
+  ? [slides.items[0]]
+  : slides.items;
 
         const slideData = [];
 
