@@ -5,25 +5,19 @@
            xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
            xsi:type="TaskPaneApp">
 
-  <!-- ============================================================
-       OW PPTX QA Tool - Office Add-in Manifest
-       Replace REPLACE-WITH-YOUR-GUID with a real GUID.
-       Generate one at: https://www.guidgenerator.com/
-  ============================================================ -->
-
-  <Id>REPLACE-WITH-YOUR-GUID</Id>
+  <Id>b0820fef-d56a-4548-801d-00f754c6b5ad</Id>
   <Version>1.0.0.0</Version>
   <ProviderName>Oliver Wyman Creative Studio</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="OW PPTX QA Tool"/>
   <Description DefaultValue="Validate PowerPoint presentations against Oliver Wyman brand guidelines."/>
 
-  <IconUrl DefaultValue="https://REPLACE-WITH-YOUR-GITHUB-PAGES-URL/assets/icon-32.png"/>
-  <HighResolutionIconUrl DefaultValue="https://REPLACE-WITH-YOUR-GITHUB-PAGES-URL/assets/icon-64.png"/>
-  <SupportUrl DefaultValue="https://github.com/REPLACE-WITH-YOUR-ORG/ow-pptx-qa"/>
+  <IconUrl DefaultValue="https://jens-lischka.github.io/ow-pptx-qa/assets/icon-32.png"/>
+  <HighResolutionIconUrl DefaultValue="https://jens-lischka.github.io/ow-pptx-qa/assets/icon-64.png"/>
+  <SupportUrl DefaultValue="https://github.com/jens-lischka/ow-pptx-qa"/>
 
   <AppDomains>
-    <AppDomain>https://REPLACE-WITH-YOUR-GITHUB-PAGES-URL</AppDomain>
+    <AppDomain>https://jens-lischka.github.io</AppDomain>
   </AppDomains>
 
   <Hosts>
@@ -37,7 +31,7 @@
   </Requirements>
 
   <DefaultSettings>
-    <SourceLocation DefaultValue="https://REPLACE-WITH-YOUR-GITHUB-PAGES-URL/src/taskpane/taskpane.html"/>
+    <SourceLocation DefaultValue="https://jens-lischka.github.io/ow-pptx-qa/src/taskpane/taskpane.html"/>
   </DefaultSettings>
 
   <Permissions>ReadWriteDocument</Permissions>
@@ -86,14 +80,14 @@
 
     <Resources>
       <bt:Images>
-        <bt:Image id="Icon.16x16" DefaultValue="https://REPLACE-WITH-YOUR-GITHUB-PAGES-URL/assets/icon-16.png"/>
-        <bt:Image id="Icon.32x32" DefaultValue="https://REPLACE-WITH-YOUR-GITHUB-PAGES-URL/assets/icon-32.png"/>
-        <bt:Image id="Icon.80x80" DefaultValue="https://REPLACE-WITH-YOUR-GITHUB-PAGES-URL/assets/icon-80.png"/>
+        <bt:Image id="Icon.16x16" DefaultValue="https://jens-lischka.github.io/ow-pptx-qa/assets/icon-16.png"/>
+        <bt:Image id="Icon.32x32" DefaultValue="https://jens-lischka.github.io/ow-pptx-qa/assets/icon-32.png"/>
+        <bt:Image id="Icon.80x80" DefaultValue="https://jens-lischka.github.io/ow-pptx-qa/assets/icon-80.png"/>
       </bt:Images>
       <bt:Urls>
-        <bt:Url id="GetStarted.LearnMoreUrl" DefaultValue="https://github.com/REPLACE-WITH-YOUR-ORG/ow-pptx-qa"/>
-        <bt:Url id="Commands.Url" DefaultValue="https://REPLACE-WITH-YOUR-GITHUB-PAGES-URL/src/commands/commands.html"/>
-        <bt:Url id="Taskpane.Url" DefaultValue="https://REPLACE-WITH-YOUR-GITHUB-PAGES-URL/src/taskpane/taskpane.html"/>
+        <bt:Url id="GetStarted.LearnMoreUrl" DefaultValue="https://github.com/jens-lischka/ow-pptx-qa"/>
+        <bt:Url id="Commands.Url" DefaultValue="https://jens-lischka.github.io/ow-pptx-qa/src/commands/commands.html"/>
+        <bt:Url id="Taskpane.Url" DefaultValue="https://jens-lischka.github.io/ow-pptx-qa/src/taskpane/taskpane.html"/>
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="GetStarted.Title" DefaultValue="OW PPTX QA Tool"/>
